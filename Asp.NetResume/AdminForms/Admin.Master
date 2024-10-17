@@ -1,0 +1,131 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="Asp.NetResume.AdminForms.Admin" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Resume Management</title>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="../Admin-Theme/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Our Custom CSS -->
+    <link href="../Admin-Theme/StyleSheet2.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Resume Admin</h3>
+                <strong>RA</strong>
+            </div>
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="AboutList.aspx">
+                        <i class="glyphicon glyphicon-home"></i>
+                        About
+                    </a>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-education"></i>
+                        Experience
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li><a href="ExperienceList.aspx">Experience List</a></li>
+                        <li><a href="ExperienceAdd.aspx">Add New Experience</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-user"></i>
+                        Education
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu1">
+                        <li><a href="EducationList.aspx">Education List</a></li>
+                        <li><a href="EducationAdd.aspx">Add New Education</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#pageSubmenu1" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-education"></i>
+                        Certificate
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu1">
+                        <li><a href="CertificateList.aspx">Certificate List</a></li>
+                        <li><a href="CertificateAdd.aspx">Add New Certificate</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-volume-up"></i>
+                        Skill
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li><a href="SkillList.aspx">Skill List</a></li>
+                        <li><a href="SkillAdd.aspx">Add New Skill</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#pageSubmenu2" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-ok"></i>
+                        Language
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu2">
+                        <li><a href="LanguageList.aspx">Language List</a></li>
+                        <li><a href="LanguageAdd.aspx">Add New Language</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu3" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-envelope"></i>
+                        Interests
+                    </a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu3">
+                        <li><a href="InterestsList.aspx">Interests</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li><a href="https://github.com/ParanovaFactory" class="download">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/sad%C4%B1k-berkay-karaduman-7407621a7/" class="article">LinkedIn</a></li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+
+                    <div class="navbar-header">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                            <i class="glyphicon glyphicon-align-left"></i>
+                            <span>Resume Admin</span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </div>
+
+    <!-- jQuery CDN -->
+    <script src="../Admin-Theme/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap Js CDN -->
+    <script src="../Admin-Theme/js-bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
